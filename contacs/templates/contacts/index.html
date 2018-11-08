@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Contacts</h1>
+    <hr>
+    
+    {% for c in contact %}
+    <p>{{ c.name }} ({{ c.email }}) - <a href="{% url 'edit_contact' c.id %}" value="edit_contact">Edit</a></p>
+    {% endfor %}
+    
+    <hr>
+    
+    <button>
+        <a href="{% url 'add_contact' %}" value="add_contact">Add Contact</a> 
+    </button>
+
+</body>
+
+</html>
